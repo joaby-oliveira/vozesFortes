@@ -29,22 +29,22 @@ export default function ConsciousnessSection() {
         <section id="da-pele-para-dentro" className="py-20 bg-gradient-hero text-primary-foreground anchor-offset">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-16">
-                    <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 mb-8">
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mb-6">
                         <img
                             src={peleLogo}
                             alt="Logo Da Pele para Dentro"
-                            className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 object-contain pointer-events-none select-none hover-scale transition-smooth"
+                            className="w-28 h-28 sm:w-36 sm:h-36 md:w-44 md:h-44 object-contain pointer-events-none select-none hover-scale transition-smooth"
                         />
-                        <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold leading-tight break-words text-center md:text-left md:mr-64">
+                        <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold leading-tight tracking-tight text-center sm:text-left">
                             Da Pele para Dentro
                         </h2>
                     </div>
-                    <div className="w-20 sm:w-24 h-1 bg-primary-foreground mx-auto -mt-3 md:-mt-6 mb-4 md:mb-8 rounded-full" />
+                    <div className="w-20 sm:w-24 h-1 bg-primary-foreground/60 mx-auto mb-6 sm:mb-8 rounded-full" />
                     <p className="text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed opacity-90 px-4">
-                        Da Pele para Dentro nasceu com a missão de promover reflexão e conscientização sobre a dependência química, que muitas vezes se disfarça em outras doenças e é tratado com preconceito e julgamento. A proposta é olhar além do que aparece na superfície — para além da pele — e enxergar a realidade interna de cada ser humano. É falar de dor, mas também de esperança. É dar voz a quem sofre em silêncio e trazer informação, acolhimento e caminhos de recuperação. Fortalecer a escuta e o diálogo, criando um espaço seguro de partilha e aprendizado.
+                        Da Pele para Dentro nasceu com a missão de promover reflexão e conscientização sobre a dependência química, que muitas vezes se disfarça em outras dores emocionais e ainda é tratada com preconceito. A proposta é olhar além da superfície e enxergar a realidade interna de cada ser humano: falar de dor, mas principalmente de esperança, acolhimento e caminhos reais de recuperação.
                     </p>
-                    <p className="text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed opacity-90 mt-3 px-4">
-                        A ação se desenvolve através da escuta terapêutica, fundamentada no método Minnesota integrada à hipnoterapia dando origem ao Método Âncora ®, voltado à regulação emocional, ao manejo de gatilhos e ao fortalecimento da consciência no processo de recuperação; rodas de conversa, que favorecem o acolhimento e a troca de experiências; palestras, com o objetivo de comunicar, informar e conscientizar sobre questões emocionais, sociais e de dependência química.
+                    <p className="text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed opacity-90 mt-4 px-4">
+                        A ação se desenvolve através da escuta terapêutica fundamentada no Método Âncora® (integrando práticas de acolhimento à hipnoterapia para regulação emocional e manejo de gatilhos), rodas de conversa para troca de vivências e palestras educativas para empresas e comunidades.
                     </p>
                 </div>
 

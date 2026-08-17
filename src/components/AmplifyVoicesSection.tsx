@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { useToast } from "@/hooks/use-toast";
 import { buildWhatsAppLink } from "@/lib/utils";
 import { Building2, HandHeart, Megaphone, Share2, UsersRound } from "lucide-react";
 
@@ -23,6 +24,8 @@ type ShareCard = {
 type Card = ActionCard | ShareCard;
 
 export default function AmplifyVoicesSection() {
+    const { toast } = useToast();
+
     const cards: ReadonlyArray<Card> = [
         {
             icon: HandHeart,
@@ -82,7 +85,10 @@ export default function AmplifyVoicesSection() {
         }
         try {
             await navigator.clipboard.writeText(shareData.url);
-            alert("Link copiado! Compartilhe com seus contatos.");
+            toast({
+                title: "Link copiado!",
+                description: "O link foi copiado para sua área de transferência. Compartilhe com seus contatos.",
+            });
         } catch {
             window.open(buildWhatsAppLink(shareData.text + " " + shareData.url));
         }

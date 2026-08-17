@@ -49,41 +49,47 @@ export default function CoursesSection() {
                     {courses.map((course, index) => (
                         <div
                             key={index}
-                            className="bg-gradient-card p-5 sm:p-7 md:p-8 rounded-xl shadow-card hover-lift transition-smooth border border-border flex flex-col h-full"
+                            className="bg-gradient-card p-5 sm:p-7 md:p-8 rounded-2xl shadow-card hover-lift transition-smooth border border-border/80 flex flex-col justify-between h-full"
                         >
-                            <div className="mb-6">
-                                <course.icon className="w-10 h-10 sm:w-12 sm:h-12 text-primary mx-auto" />
-                            </div>
-                            <h3 className="text-lg sm:text-xl font-semibold text-primary-dark mb-3 sm:mb-4 text-center min-h-[3.25rem] sm:min-h-[3.5rem]">
-                                {course.title}
-                            </h3>
-                            <p className="text-sm sm:text-base text-muted-foreground text-center leading-relaxed mb-5 sm:mb-6">
-                                {course.description}
-                            </p>
-
-                            <div className="space-y-2.5 sm:space-y-3 mb-5 sm:mb-6">
-                                <div className="flex items-center justify-between py-2 px-3 sm:px-4 bg-primary/5 rounded-lg">
-                                    <span className="text-sm font-medium text-primary-dark">Duração:</span>
-                                    <span className="text-sm text-primary font-semibold">{course.duration}</span>
+                            <div>
+                                <div className="mb-6 flex justify-center">
+                                    <div className="p-3.5 bg-primary/10 rounded-2xl">
+                                        <course.icon className="w-8 h-8 text-primary" />
+                                    </div>
                                 </div>
-                                <div className="flex items-center justify-between py-2 px-3 sm:px-4 bg-primary/5 rounded-lg">
-                                    <span className="text-sm font-medium text-primary-dark">Formato:</span>
-                                    <span className="text-sm text-primary font-semibold">{course.format}</span>
-                                </div>
+                                <h3 className="text-lg sm:text-xl font-semibold text-primary-dark mb-3 text-center leading-snug">
+                                    {course.title}
+                                </h3>
+                                <p className="text-sm sm:text-base text-muted-foreground text-center leading-relaxed mb-6">
+                                    {course.description}
+                                </p>
                             </div>
 
-                            <Button asChild variant="cta" size="lg" className="w-full mt-auto">
-                                <a
-                                    href={buildWhatsAppLink(course.message, course.title)}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    {course.title.includes('Workshops Corporativos')
-                                        ? 'Saiba Mais - Valores e Disponibilidade'
-                                        : 'Saiba Mais - Valores e Próximas Turmas'
-                                    }
-                                </a>
-                            </Button>
+                            <div>
+                                <div className="space-y-2.5 mb-6">
+                                    <div className="flex items-center justify-between py-2.5 px-4 bg-primary/5 rounded-xl text-sm">
+                                        <span className="font-medium text-primary-dark">Duração:</span>
+                                        <span className="text-primary font-semibold">{course.duration}</span>
+                                    </div>
+                                    <div className="flex items-center justify-between py-2.5 px-4 bg-primary/5 rounded-xl text-sm">
+                                        <span className="font-medium text-primary-dark">Formato:</span>
+                                        <span className="text-primary font-semibold">{course.format}</span>
+                                    </div>
+                                </div>
+
+                                <Button asChild variant="cta" size="lg" className="w-full">
+                                    <a
+                                        href={buildWhatsAppLink(course.message, course.title)}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        {course.title.includes('Workshops Corporativos')
+                                            ? 'Consultar Disponibilidade'
+                                            : 'Consultar Turmas & Valores'
+                                        }
+                                    </a>
+                                </Button>
+                            </div>
                         </div>
                     ))}
                 </div>

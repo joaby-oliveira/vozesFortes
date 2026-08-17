@@ -1,7 +1,9 @@
+import ScrollToTop from "@/components/ScrollToTop";
 import { ScrollProgress } from "@/components/ui/ScrollProgress";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import { initRevealOnScroll } from "@/lib/reveal";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useEffect } from "react";
@@ -30,6 +32,8 @@ const App = () => {
                         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                         <Route path="*" element={<NotFound />} />
                     </Routes>
+                    <WhatsAppButton />
+                    <ScrollToTop />
                 </BrowserRouter>
             </TooltipProvider>
         </QueryClientProvider>

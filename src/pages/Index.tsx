@@ -6,25 +6,20 @@ const MonicaSection = lazy(() => import("@/components/MonicaSection"));
 const ConsciousnessSection = lazy(() => import("@/components/ConsciousnessSection"));
 const EditorialSection = lazy(() => import("@/components/EditorialSection"));
 const CoursesSection = lazy(() => import("@/components/CoursesSection"));
-const AmplifyVoicesSection = lazy(() => import("@/components/AmplifyVoicesSection"));
 const DigitalProjectsSection = lazy(() => import("@/components/DigitalProjectsSection"));
+const AmplifyVoicesSection = lazy(() => import("@/components/AmplifyVoicesSection"));
+const FaqSection = lazy(() => import("@/components/FaqSection"));
 const Footer = lazy(() => import("@/components/Footer"));
 
 const Index = () => {
     return (
         <main id="main" className="min-h-screen">
-            <div id="hero">
-                <HeroSection />
-            </div>
+            <HeroSection />
             <Suspense fallback={<div className="py-10" />}>
-                <div id="o-que-fazemos">
-                    <WhatWeDoSection />
-                </div>
+                <WhatWeDoSection />
             </Suspense>
             <Suspense fallback={<div className="py-10" />}>
-                <div id="quem-somos">
-                    <MonicaSection />
-                </div>
+                <MonicaSection />
             </Suspense>
             <Suspense fallback={<div className="py-10" />}>
                 <ConsciousnessSection />
@@ -33,22 +28,19 @@ const Index = () => {
                 <EditorialSection />
             </Suspense>
             <Suspense fallback={<div className="py-10" />}>
-                <div id="cursos">
-                    <CoursesSection />
-                </div>
+                <CoursesSection />
+            </Suspense>
+            <Suspense fallback={<div className="py-10" />}>
+                <DigitalProjectsSection />
             </Suspense>
             <Suspense fallback={<div className="py-10" />}>
                 <AmplifyVoicesSection />
             </Suspense>
             <Suspense fallback={<div className="py-10" />}>
-                <div id="projetos">
-                    <DigitalProjectsSection />
-                </div>
+                <FaqSection />
             </Suspense>
             <Suspense fallback={<div className="py-10" />}>
-                <div id="contato">
-                    <Footer />
-                </div>
+                <Footer />
             </Suspense>
         </main>
     );

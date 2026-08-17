@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import tailwindcssAnimate from "tailwindcss-animate";
 
 export default {
     darkMode: ["class"],
@@ -13,6 +14,10 @@ export default {
             },
         },
         extend: {
+            fontFamily: {
+                sans: ["'Plus Jakarta Sans'", "system-ui", "-apple-system", "sans-serif"],
+                heading: ["'Outfit'", "'Plus Jakarta Sans'", "sans-serif"],
+            },
             colors: {
                 border: "hsl(var(--border))",
                 input: "hsl(var(--input))",
@@ -85,22 +90,22 @@ export default {
                 "fade-in": {
                     "0%": {
                         opacity: "0",
-                        transform: "translateY(20px)"
+                        transform: "translateY(20px)",
                     },
                     "100%": {
                         opacity: "1",
-                        transform: "translateY(0)"
-                    }
+                        transform: "translateY(0)",
+                    },
                 },
                 "scale-in": {
                     "0%": {
                         transform: "scale(0.95)",
-                        opacity: "0"
+                        opacity: "0",
                     },
                     "100%": {
                         transform: "scale(1)",
-                        opacity: "1"
-                    }
+                        opacity: "1",
+                    },
                 },
             },
             animation: {
@@ -113,5 +118,5 @@ export default {
             },
         },
     },
-    plugins: [require("tailwindcss-animate")],
+    plugins: [tailwindcssAnimate],
 } satisfies Config;

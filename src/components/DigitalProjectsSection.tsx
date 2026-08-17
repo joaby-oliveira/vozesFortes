@@ -2,7 +2,7 @@ import appPreview from "@/assets/app-preview.png";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
-import { BookOpen, Brain, Mail, MessageCircle } from "lucide-react";
+import { BookOpen, Brain, CheckCircle2, Loader2, Mail, MessageCircle } from "lucide-react";
 import { useState } from "react";
 
 export default function DigitalProjectsSection() {
@@ -341,17 +341,25 @@ export default function DigitalProjectsSection() {
                                     type="submit"
                                     variant="hero"
                                     size="lg"
-                                    className="w-full"
+                                    className="w-full flex items-center justify-center gap-2"
                                     disabled={isSubmitting}
                                 >
-                                    {isSubmitting ? "Cadastrando..." : "Quero Ser Notificado"}
+                                    {isSubmitting ? (
+                                        <>
+                                            <Loader2 className="w-5 h-5 animate-spin" />
+                                            Cadastrando...
+                                        </>
+                                    ) : (
+                                        "Quero Ser Notificado"
+                                    )}
                                 </Button>
                             </form>
 
                             {/* Feedback adicional acessível */}
                             {formStatus === "success" && (
-                                <div className="mt-4 text-sm text-green-700 bg-green-50 border border-green-200 rounded-md p-3" role="status" aria-live="polite">
-                                    Inscrição recebida com sucesso. Em breve você receberá novidades.
+                                <div className="mt-4 flex items-center gap-2.5 text-sm text-green-800 bg-green-50/90 border border-green-200 rounded-xl p-3.5 animate-fade-in" role="status" aria-live="polite">
+                                    <CheckCircle2 className="w-5 h-5 text-green-600 flex-shrink-0" />
+                                    <span>Inscrição recebida com sucesso! Em breve você receberá novidades exclusivas.</span>
                                 </div>
                             )}
                             {formStatus === "error" && (nameError || phoneError || emailError) && (

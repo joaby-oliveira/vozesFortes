@@ -135,6 +135,10 @@ All colors MUST be HSL.
         @apply bg-background text-foreground font-sans antialiased overflow-x-hidden;
     }
 
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-heading tracking-tight;
+    }
+
     /* Foco visível consistente para links, botões e inputs */
     :is(a, button, [role="button"], input, textarea, select):focus-visible {
         outline: none;

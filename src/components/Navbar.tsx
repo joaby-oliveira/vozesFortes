@@ -17,7 +17,7 @@ const Navbar = () => {
             }
 
             // Detect active section
-            const sections = ["hero", "o-que-fazemos", "monica-casagrande", "da-pele-para-dentro", "producao-editorial", "cursos-treinamentos", "projetos-digitais", "amplifique-essas-vozes"];
+            const sections = ["hero", "o-que-fazemos", "monica-casagrande", "da-pele-para-dentro", "producao-editorial", "cursos-treinamentos", "projetos-digitais", "amplifique-essas-vozes", "duvidas-frequentes"];
             const scrollPosition = window.scrollY + 100;
 
             for (const section of sections) {
@@ -54,7 +54,7 @@ const Navbar = () => {
             className={cn(
                 "fixed top-0 left-0 w-full z-50 transition-all duration-500 border-b border-transparent",
                 scrolled
-                    ? "bg-background/70 backdrop-blur-xl border-white/10 shadow-lg supports-[backdrop-filter]:bg-background/60"
+                    ? "bg-background/80 backdrop-blur-xl border-white/10 shadow-lg supports-[backdrop-filter]:bg-background/70"
                     : "bg-transparent py-2"
             )}
         >
@@ -64,7 +64,7 @@ const Navbar = () => {
                     <button
                         onClick={() => scrollToSection("hero")}
                         className={cn(
-                            "text-2xl font-bold tracking-tighter hover:opacity-80 transition-opacity flex items-center gap-1",
+                            "text-2xl font-bold font-heading tracking-tighter hover:opacity-80 transition-opacity flex items-center gap-1",
                             scrolled ? "text-foreground" : "text-white"
                         )}
                     >
@@ -93,7 +93,7 @@ const Navbar = () => {
                         <div className="pl-2">
                             <Button
                                 size="sm"
-                                className="rounded-full px-6 shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all duration-300"
+                                className="rounded-full px-6 shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all duration-300 font-medium"
                                 onClick={() => scrollToSection("amplifique-essas-vozes")}
                             >
                                 Apoie
@@ -105,7 +105,10 @@ const Navbar = () => {
                     <div className="lg:hidden">
                         <button
                             onClick={() => setIsOpen(!isOpen)}
-                            className="p-2 text-foreground hover:bg-accent rounded-full transition-colors"
+                            className={cn(
+                                "p-2 rounded-full transition-colors",
+                                scrolled ? "text-foreground hover:bg-accent" : "text-white hover:bg-white/10"
+                            )}
                             aria-label="Toggle menu"
                         >
                             {isOpen ? <X size={24} /> : <Menu size={24} />}
